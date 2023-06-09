@@ -17,8 +17,10 @@ const area = d3.area()
 
 
 svg
-    .attr("height", 40 * data.length)
-    .attr("width", 560)
+    .attr("viewBox", `0 0 560 1200`)
+
+    // .attr("height", 40 * data.length)
+    // .attr("width", 560)
 
 const areaPath = svg
     .append("path")
