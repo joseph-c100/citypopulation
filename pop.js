@@ -1,12 +1,31 @@
 const svg = d3.select("svg")
 
+// data = data.map((d,i)=> {
+//     d.difference = d["2035"] - d["1950"]
+//     return d
+// })
+
 const popScale = d3.scaleLinear()
     .domain([1000000, 38000000])
     .range([220, 500])
 
+const area = d3.area()
+    .x0((d,i)=>{return popScale(d["2020"])})
+    .x1((d,i)=>{return popScale(d["2035"])})
+    .y0((d,i)=>{return 40 * i + 40})
+    .y1((d,i)=>{return 40 * i + 40})
+
+
 svg
     .attr("height", 40 * data.length)
     .attr("width", 560)
+
+const areaPath = svg
+    .append("path")
+    .datum(data)
+    .attr("d", area)
+    .attr("class", "area")
+
 
 const groups = svg
     .selectAll("g.city")
@@ -37,7 +56,7 @@ groups
     .attr("r", 6)
     .attr("class", "fifteen")
 
-    groups
+groups
     .append("circle")
     .attr("cx", (d, i) => { return popScale(d["2020"]) }) 
     .attr("cy", 40)
@@ -51,13 +70,23 @@ groups
     .attr("r", 6)
     .attr("class", "future")
 
+// // labels
+// groups 
+//     .append("text")
+//     .attr("x", (d,i)=> {return popScale(d["1950"])})
+//     .attr("y", 30)
+//     .text((d,i)=>{return d["1950"]})
+
+
 
 groups
     .append("rect")
     .attr("y", 20)
     .attr("height", 36)
-    .attr("width", 960)
+    .attr("width", 560)
     .attr("class", "hoverRect")
+
+
 
 
 
@@ -117,6 +146,8 @@ selectTag.addEventListener("change", function(){
             return d3.descending(a["2020"], b["2020"])
         } else if (this.value == "1950pop") {
             return d3.descending(a["1950"], b["1950"])
+        } else if (this.value == "difference") {
+            return d3.descending(a["Absolute Change"], b["Absolute Change"])
         } else {
             return d3.ascending(a["City"], b["City"])
         }
@@ -152,6 +183,12 @@ selectTag.addEventListener("change", function(){
         .transition()
         .duration(1000)
         .attr("d",orangeLine)
+
+    areaPath
+        .datum(data, (d,i)=>{return d["City"]})
+        .transition()
+        .duration(1000)
+        .attr("d", area)
 
 })
 

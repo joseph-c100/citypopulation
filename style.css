@@ -130,8 +130,12 @@ path.orange {
 }
 
 footer {
-    margin-top: 20px;
-    text-align: right;
+    margin-top: 30px;
+    /* text-align: right; */
     font-size: 12px;
+}
+
+path.area {
+    fill: rgba(253, 175, 92, 0.05);
 }
 
