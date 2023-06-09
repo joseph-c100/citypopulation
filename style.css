@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+}
+
+:root {
+    --background: #f6f6e5;
+    --black: #111118;
+    --1950: #E4160D;
+    --2015: #177A7D;
+    --2020: #3c6135;
+    --2035: #e06c2e;
+    --highlight: rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+
+    max-width: 560px;
+    margin: 40px auto 40px auto;
+
+    background-color: var(--background);
+    color: var(--black);
+    /* overflow-x: hidden; */
+}
+
+header {
+    padding: 10px;
+    background-color: var(--background);
+
+    border-bottom: dashed 1px var(--black);
+
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+    max-width: 100vw;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+svg {
+    overflow: visible
+}
+
+h1 {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+span {
+    margin: 0 10px 0 0px;
+}
+
+#fifty {
+    color: var(--1950);
+}
+
+#fifteen {
+    color: var(--2015);
+}
+
+#twenty {
+    color: var(--2020);
+}
+
+#future {
+    color: var(--2035);
+}
+
+text {
+    dominant-baseline: middle;
+}
+
+circle.fifty {
+    fill: var(--1950)
+}
+
+circle.fifteen {
+    fill: var(--2015)
+}
+
+circle.twenty {
+    fill: var(--2020)
+}
+
+circle.future {
+    stroke:  var(--2035);
+    fill: none;
+
+}
+
+rect.hoverRect {
+    fill: rgba(37, 25, 25, 0.09);
+    opacity: 0;
+    transition: opacity 0.20s;
+}
+
+g:hover rect.hoverRect {
+    opacity: 1;
+}
+
+path.red {
+    fill: none;
+    stroke: var(--1950);
+    stroke-width: 1.5px;
+}
+
+path.blue {
+    fill: none;
+    stroke: var(--2015);
+    stroke-width: 1.5px;
+}
+
+path.green {
+    fill: none;
+    stroke: var(--2020);
+    stroke-width: 1.5px;
+}
+
+path.orange {
+    fill: none;
+    stroke: var(--2035);
+    stroke-width: 1.5px;
+    stroke-dasharray: 2;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 12px;
+}
+

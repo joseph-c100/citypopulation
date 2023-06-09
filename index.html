@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <h1>City Population</h1>
+            </div>
+            <form>
+                <span id="fifty">1950</span>
+                <span id="fifteen">2015</span>
+                <span id="twenty">2020</span>
+                <span id="future">2035</span>
+
+                <select>
+                    <option value="az">A-Z</option>
+                    <option value="1950pop">1950 population</option>
+                    <option value="2020pop">2020 population</option>
+                </select>
+            </form>
+        </header>
+
+        <svg></svg>
+
+        <footer>
+            <a href="https://ourworldindata.org/urbanization">Source</a>
+        </footer>
+        
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="data.js"></script>
+        <script src="pop.js"></script>
+    </body>
+</html>
