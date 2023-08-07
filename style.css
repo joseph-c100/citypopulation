@@ -26,10 +26,10 @@ body {
 }
 
 header {
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     background-color: var(--background);
 
-    border-bottom: dashed 1px var(--black);
+    border-bottom: solid 1.5px var(--black);
 
     display: flex;
     justify-content: space-between;
@@ -130,7 +130,10 @@ path.orange {
 }
 
 footer {
-    margin-top: 30px;
+    position: fixed;
+    font-style: italic;
+    bottom: 12px;
+    right: 20px;
     padding: 10px;
     font-size: 12px;
 }
