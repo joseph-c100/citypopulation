@@ -152,13 +152,11 @@ path.orange {
     stroke-dasharray: 2;
 }
 
-footer {
-    position: absolute;
+.source {
     font-style: italic;
-    bottom: 12px;
-    right: 20px;
     padding: 10px;
     font-size: 12px;
+    margin-top: 20px;
 }
 
 path.area {
