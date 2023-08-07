@@ -1,12 +1,7 @@
 const svg = d3.select("svg")
 
-// data = data.map((d,i)=> {
-//     d.difference = d["2035"] - d["1950"]
-//     return d
-// })
-
 const popScale = d3.scaleLinear()
-    .domain([1000000, 38000000])
+    .domain([1000000, 44000000])
     .range([220, 500])
 
 const area = d3.area()
@@ -34,6 +29,19 @@ const groups = svg
     .attr("class", "city")
     .attr("transform", (d,i)=> {return `translate(0, ${i*40})`})
 
+
+// population x axis
+const x_axis = d3.axisBottom()
+    .scale(popScale)
+    .ticks(4)
+    .tickFormat(d3.format(".2s"))
+    
+svg.append("g")
+    .attr("class", "x-axis")
+    .attr("transform", "translate(0, -8)") // Adjust the translation as needed
+    .call(x_axis);
+
+
 // city labels
 groups
     .append("text")
@@ -41,6 +49,9 @@ groups
     .attr("x", 20)
     .attr("y", 40)
     .text((d,i)=> {return d.City})
+
+
+
 
 // circle positions
 groups
@@ -79,7 +90,6 @@ groups
     .append("text")
     .attr("class", "popLabel")
     .attr("x", (d,i)=> {return popScale(d["2035"]) + 40})
-    // .attr("x", 500)
     .attr("y", 40)
     .text((d,i)=>{return d3.format(".2s")(d["1950"])})
     .style("fill", "var(--1950)")
