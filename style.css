@@ -156,8 +156,12 @@ path.orange {
 .source {
     font-style: italic;
     padding: 10px;
-    font-size: 12px;
     margin-top: 20px;
+}
+
+.source a {
+    font-size: 12px;
+    color: var(--black)
 }
 
 path.area {
