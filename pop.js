@@ -42,6 +42,7 @@ groups
     .attr("y", 40)
     .text((d,i)=> {return d.City})
 
+// circle positions
 groups
     .append("circle")
     .attr("cx", (d, i) => { return popScale(d["1950"]) }) 
@@ -71,12 +72,44 @@ groups
     .attr("class", "future")
 
 
-// // labels
-// groups 
-//     .append("text")
-//     .attr("x", (d,i)=> {return popScale(d["1950"])})
-//     .attr("y", 30)
-//     .text((d,i)=>{return d["1950"]})
+
+
+// pop labels  on hover
+groups 
+    .append("text")
+    .attr("class", "popLabel")
+    .attr("x", (d,i)=> {return popScale(d["2035"]) + 40})
+    // .attr("x", 500)
+    .attr("y", 40)
+    .text((d,i)=>{return d3.format(".2s")(d["1950"])})
+    .style("fill", "var(--1950)")
+
+groups 
+    .append("text")
+    .attr("class", "popLabel")
+    .attr("x", (d,i)=> {return popScale(d["2035"]) + 80})
+    .attr("y", 40)
+    .text((d,i)=>{return d3.format(".2s")(d["2015"])})
+    .style("fill", "var(--2015)")
+
+
+groups 
+    .append("text")
+    .attr("class", "popLabel")
+    .attr("x", (d,i)=> {return popScale(d["2035"]) + 120})
+    .attr("y", 40)
+    .text((d,i)=>{return d3.format(".2s")(d["2020"])})
+    .style("fill", "var(--2020)")
+
+
+groups 
+    .append("text")
+    .attr("class", "popLabel")
+    .attr("x", (d,i)=> {return popScale(d["2035"]) + 160})
+    .attr("y", 40)
+    .text((d,i)=>{return d3.format(".2s")(d["2035"])})
+    .style("fill", "var(--2035)")
+
 
 
 // hover boxes
@@ -98,6 +131,7 @@ groups
     .attr("y2", 18)
 
 
+// path lines
 const redLine = d3.line()
     .x((d,i)=>{return popScale(d["1950"])})
     .y((d,i)=>{return 40 * i + 40})
@@ -141,10 +175,7 @@ const orangePath = svg
 
 
 
-
-
-
-// sorts data to highest 2021 pop descending order
+// sort data 
 const selectTag = document.querySelector("select")
 
 selectTag.addEventListener("change", function(){
@@ -168,6 +199,7 @@ selectTag.addEventListener("change", function(){
         .attr("transform", (d,i)=> {return `translate(0, ${i*40})`})
 
 
+// path transitions
     redPath
         .datum(data, (d,i)=> {return d["City"]})
         .transition()

@@ -44,7 +44,7 @@ header {
 
 select {
     padding: 2px;
-    max-width: 140px;
+    max-width: 300px;
     background-color: #f6f6f6;
     border-radius: 4px;
 }
@@ -61,10 +61,12 @@ h1 {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 18px;
     margin-bottom: 12px;
+    color: var(--black);
 }
 
 span {
     margin: 0 10px 0 0px;
+    font-weight: 800;
 }
 
 #fifty {
@@ -103,6 +105,16 @@ circle.future {
     stroke:  var(--2035);
     fill: none;
 
+}
+
+text.popLabel {
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.20s;
+}
+
+g:hover text.popLabel {
+    opacity: 1;
 }
 
 rect.hoverRect {
