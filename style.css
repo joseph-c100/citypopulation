@@ -153,7 +153,7 @@ path.orange {
 }
 
 footer {
-    position: fixed;
+    position: absolute;
     font-style: italic;
     bottom: 12px;
     right: 20px;
@@ -177,8 +177,22 @@ line.gridLine {
         margin: 20px auto 20px auto;
     }
 
+    form {
+        margin-top: 8px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
     header {
-        padding: 20px;
+        display: block;
+        padding: 14px;
+    }
+
+    /* no hover labels for mobile */
+    g:hover text.popLabel {
+        opacity: 0;
     }
 }
 
