@@ -5,7 +5,7 @@
 
 :root {
     --background: #f6f6e5;
-    --black: #111118;
+    --black: #1c1c20;
     --1950: #E4160D;
     --2015: #177A7D;
     --2020: #3c6135;
@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Space Mono', monospace;
+    font-family:Verdana, sans-serif;
     font-size: 14px;
 
     max-width: 560px;
@@ -59,7 +59,7 @@ svg {
 }
 
 h1 {
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 18px;
     margin-bottom: 12px;
     color: var(--black);
@@ -67,7 +67,6 @@ h1 {
 
 span {
     margin: 0 10px 0 0px;
-    font-weight: 800;
 }
 
 #fifty {
@@ -185,7 +184,7 @@ line.gridLine {
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     header {
