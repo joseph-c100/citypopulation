@@ -44,9 +44,9 @@ header {
 }
 
 select {
-    padding: 2px;
+    padding: 1px;
     max-width: 300px;
-    background-color: #f6f6f6;
+    background: none;
     border-radius: 4px;
 }
 
@@ -181,7 +181,7 @@ line.gridLine {
     }
 
     h1 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     header {
