@@ -19,9 +19,6 @@ const area = d3.area()
 svg
     .attr("viewBox", `0 0 560 1200`)
 
-    // .attr("height", 40 * data.length)
-    // .attr("width", 560)
-
 const areaPath = svg
     .append("path")
     .datum(data)
@@ -37,6 +34,7 @@ const groups = svg
     .attr("class", "city")
     .attr("transform", (d,i)=> {return `translate(0, ${i*40})`})
 
+// city labels
 groups
     .append("text")
     .attr("class", "title")
@@ -72,6 +70,7 @@ groups
     .attr("r", 6)
     .attr("class", "future")
 
+
 // // labels
 // groups 
 //     .append("text")
@@ -80,7 +79,7 @@ groups
 //     .text((d,i)=>{return d["1950"]})
 
 
-
+// hover boxes
 groups
     .append("rect")
     .attr("y", 20)
@@ -89,7 +88,14 @@ groups
     .attr("class", "hoverRect")
 
 
-
+// grid lines
+groups
+    .append("line")
+    .attr("class", "gridLine")
+    .attr("x1", 0)
+    .attr("x2", 560)
+    .attr("y1", 18)
+    .attr("y2", 18)
 
 
 const redLine = d3.line()

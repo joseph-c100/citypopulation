@@ -42,6 +42,17 @@ header {
     z-index: 1;
 }
 
+select {
+    padding: 2px;
+    max-width: 140px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+}
+
+select:hover {
+    background-color: #f1f1f1;
+}
+
 svg {
     overflow: visible
 }
@@ -49,7 +60,7 @@ svg {
 h1 {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 span {
@@ -140,6 +151,13 @@ footer {
 
 path.area {
     fill: rgba(253, 175, 92, 0.05);
+}
+
+line.gridLine {
+    stroke-opacity: 20%;
+    stroke-width: 1px;
+    stroke: black;
+    stroke-dasharray: 2;
 }
 
 @media (max-width: 660px) {
