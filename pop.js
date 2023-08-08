@@ -1,18 +1,19 @@
 const svg = d3.select("svg")
 
+svg
+    .attr("viewBox", `0 0 560 1200`)
+
+// scale
 const popScale = d3.scaleLinear()
     .domain([1000000, 44000000])
     .range([220, 500])
 
+// area graph calculation
 const area = d3.area()
     .x0((d,i)=>{return popScale(d["2020"])})
     .x1((d,i)=>{return popScale(d["2035"])})
     .y0((d,i)=>{return 40 * i + 40})
     .y1((d,i)=>{return 40 * i + 40})
-
-
-svg
-    .attr("viewBox", `0 0 560 1200`)
 
 const areaPath = svg
     .append("path")
@@ -21,6 +22,7 @@ const areaPath = svg
     .attr("class", "area")
 
 
+// adding group for each city
 const groups = svg
     .selectAll("g.city")
     .data(data)
@@ -38,7 +40,7 @@ const x_axis = d3.axisBottom()
     
 svg.append("g")
     .attr("class", "x-axis")
-    .attr("transform", "translate(0, -8)") // Adjust the translation as needed
+    .attr("transform", "translate(0, -8)")
     .call(x_axis);
 
 
